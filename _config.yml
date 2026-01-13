@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
+title: LYN
+subtitle: '少年心气是不可再生之物'
 description: ''
-keywords:
-author: John Doe
-language: ch-zn
-timezone: ''
+keywords: CS学习, 编程, 成长记录
+author: LYNff
+language: zh-CN
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -50,10 +50,12 @@ highlight:
   tab_replace: ''
   wrap: true
   hljs: false
+  exclude_languages: ['mermaid']
 prismjs:
   preprocess: true
   line_number: true
   tab_replace: ''
+  exclude_languages: ['mermaid']
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -96,9 +98,87 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: butterfly
+theme: anzhiyu
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+# Search
+search:
+  path: search
+  field: all
+  content: true
+
+# 这里的配置不需要写HTML，插件会自动生成()
+# swiper:
+#   enable: true
+#   priority: 10
+#   enable_page: /
+#   timemode: date
+#   layout:
+#     type: id
+#     name: recent-posts
+#     index: 0
+#   default_descr: 这里的描述可以随便写
+#   swiper_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper.min.css
+#   swiper_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper.min.js
+#   custom_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiperstyle.css
+#   custom_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper_init.js
+
+# tag-plugins-plus
+# see https://akilar.top/posts/615e2dec/
+tag_plugins:
+  enable: true # 开关
+  priority: 5 #过滤器优先权
+  issues: false #issues标签依赖注入开关
+  link:
+    placeholder: /img/link.png #link_card标签默认的图标图片
+  CDN:
+    anima: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css #动画标签anima的依赖
+    jquery: https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js #issues标签依赖
+    issues: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js #issues标签依赖
+    iconfont: //at.alicdn.com/t/font_2032782_8d5kxvn09md.js #参看https://akilar.top/posts/d2ebecef/
+    carousel: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js
+    tag_plugins_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css
+
+# algolia搜索: https://github.com/LouisBarranqueiro/hexo-algoliasearch
+algolia:
+  appId: "1ADR572V6B"
+  apiKey: "f3c8b42f3093e72950b735918716243f"
+  adminApiKey: "c30529eb61cba47e566bfd49a4939e97"
+  chunkSize: 5000
+  indexName: "hexo"
+  fields:
+    - content:strip:truncate,0,200
+    - excerpt:strip
+    - gallery
+    - permalink
+    - photos
+    - slug
+    - tags
+    - title
+
+#envelope_comment
+#seehttps://akilar.top/posts/e2d3c450/
+# envelope_comment:
+#   enable: true #控制开关
+#   custom_pic:
+#     cover: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/violet.jpg #信笺头部图片
+#     line: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/line.png #信笺底部图片
+#     beforeimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/before.png # 信封前半部分
+#     afterimg: https://npm.elemecdn.com/hexo-butterfly-envelope/lib/after.png # 信封后半部分
+#   message: #信笺正文，多行文本，写法如下
+#     - 有什么想问的？
+#     - 有什么想说的？
+#     - 有什么想吐槽的？
+#     - 哪怕是有什么想吃的，都可以告诉我哦~
+#   bottom: 自动书记人偶竭诚为您服务！ #仅支持单行文本
+#   height: #1024px，信封划出的高度
+#   path: #【可选】comments 的路径名称。默认为 comments，生成的页面为 comments/index.html
+#   front_matter: #【可选】comments页面的 front_matter 配置
+#     title: 留言板
+#     comments: true
+#     top_img: false
+#     type: envelope
