@@ -5,6 +5,7 @@ tags:
 date: 2026-01-14 17:01:00
 categories: 数学建模
 math: true
+cover: /img/day1.png
 ---
 ## 层次分析法
 用两两比较法确定指标的重要性。
