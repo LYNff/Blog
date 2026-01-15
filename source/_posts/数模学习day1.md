@@ -2,6 +2,7 @@
 title: 数模学习day1
 tags:
   - 数模训练
+  - 评价模型
 date: 2026-01-14 17:01:00
 categories: 数学建模
 math: true
