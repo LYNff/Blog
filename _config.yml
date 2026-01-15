@@ -182,3 +182,23 @@ algolia:
 #     comments: true
 #     top_img: false
 #     type: envelope
+
+# kramed:
+#   gfm: true
+#   pedantic: false
+#   sanitize: false
+#   tables: true
+#   breaks: true
+#   smartLists: true
+#   smartypants: true
+
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  plugins:
+    - '@iktakahiro/markdown-it-katex'
