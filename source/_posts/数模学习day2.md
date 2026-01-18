@@ -20,10 +20,18 @@ cover: /img/day2.png
 | 中间型 |                          $M=max\{\|x_i-x_{best}\|\}$, $\hat{x}=1-\frac{\|x_i-x_{best}\|}{M}$                           |
 | 区间型 | $M=max\{a-x_{min},x_{max}-b\}$, $\hat{x}=1-\frac{a-x_i}{M}\,(x_i<a),\ 1\,(a\le x_i\le b),\ 1-\frac{x_i-b}{M}\,(x_i>b)$ |
 2. 矩阵标准化
-   $Z_{ij}=\frac{x_{ij}}{\sqrt{\sum_{i=1}^{n}x_{ij}^2}}$ 
+   $$Z_{ij}=\frac{x_{ij}}{\sqrt{\sum_{i=1}^{n}x_{ij}^2}}$$ 
 3. 找出理想最优解、理想最劣解
 4. 给指标定权重，层次分析法、熵权法、Delphi法、对数最小二乘法等等
 5. 计算各方案与最优解、最劣解的距离进而求出最终得分
+   $$
+   D_i^+=\sqrt{\sum_{j=1}^{m}{w_j}{(Z_j^+-z_{ij})^2}}
+   $$$$
+   D_i^-=\sqrt{\sum_{j=1}^{m}{w_j}{(Z_j^--z_{ij})^2}}
+   $$
+$$
+S_i=\frac{D_i^-}{D_i^++D_i^-}
+$$
 # 上机操作
 在python中的一些用到的函数
 ```python
@@ -42,7 +50,8 @@ A = np.zeros((n,m)) # 创建一个二维零矩阵，n行m列
 
 for i in range(n):
 	A[i] = input().split()
-	A[i] = list(map(float, A[i])) # 将接收到的字符串列表转换为浮点型
+	
+k	A[i] = list(map(float, A[i])) # 将接收到的字符串列表转换为浮点型
 	
 # reshape()函数用于改变数组形状
 # 当一个数字为-1时，表示该维度的大小由系统自动推导，通过总元素数量和另一个维度来确定新的形状
@@ -53,4 +62,12 @@ print(reshaped_arr) # 此时的输出为[[1 2 3] \\ [4 5 6]]
 
 # np.hstack 是NumPy库中的一个函数
 # 用于水平方向将多个数组堆叠在一起
+
+# astype(dtyep)函数是将数组的元素类型转换为指定类型，并返回一个新数组
+
+# np.max(array, axis)是numpy库中的函数，用于数组的最大值计算
+# axis取0时是列方向的最大值，取1是行方向的最大值，什么都不去默认是求矩阵里面的最大值
+
+# np.tile(A, reps)将数组 A 沿指定方向复制 reps 次，生成一个更大的数组。
+# reps: 重复次数，可以是整数或元组，控制沿各个维度的重复次数
 ```
