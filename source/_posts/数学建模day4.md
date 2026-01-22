@@ -6,6 +6,7 @@ tags:
   - 数模训练
 math: true
 categories: 数学建模
+cover: /img/day4.png
 ---
 # NumPy 的广播机制
 简单来说，广播机制允许 NumPy 在进行算术运算（如加、减、乘、除）时，**自动将形状（Shape）不一样的数组“拉伸”成形状一样的数组**，从而能够逐元素进行计算。
