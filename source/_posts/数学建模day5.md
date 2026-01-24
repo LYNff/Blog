@@ -7,6 +7,7 @@ tags:
   - 线性回归
 categories: 数学建模
 math: true
+cover: /img/day5.png
 ---
 # 灰色关联分析
 核心是计算变量之间的关联度。
